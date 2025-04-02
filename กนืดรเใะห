@@ -1,0 +1,29 @@
+{
+  "contributes": {
+    "configuration": {
+      "title": "N8n Extension Configuration",
+      "properties": {
+        "n8n.serverUrl": {
+          "type": "string",
+          "default": "http://localhost:5678",
+          "description": "The URL of your n8n server."
+        },
+        "n8n.apiKey": {
+          "type": "string",
+          "description": "The API key for your n8n server (if required)."
+        },
+        "n8n.workflowSchemaUrl": {
+          "type": "string",
+          "default": "http://localhost:5678/rest/v1/workflow/schema",
+          "description": "The URL to fetch the n8n workflow schema."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "n8n.uploadWorkflow",
+        "title": "N8n: Upload Workflow to Server"
+      }
+    ]
+  }
+}

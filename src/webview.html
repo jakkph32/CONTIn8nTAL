@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n8n Trigger</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+        }
+        input, button {
+            margin: 5px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Trigger n8n Workflow</h2>
+    <label>n8n Webhook URL:</label>
+    <input type="text" id="webhookUrl" placeholder="https://your-n8n-instance.com/webhook/your-node-id">
+    
+    <label>Payload (JSON):</label>
+    <textarea id="payload" rows="5">{ "key1": "value1" }</textarea>
+    
+    <button onclick="triggerWorkflow()">Trigger</button>
+
+    <p id="response"></p>
+
+    <script>
+        async function triggerWorkflow() {
+            const url = document.getElementById("webhookUrl").value;
+            const payload = document.getElementById("payload").value;
+
+            try {
+                const response = await fetch(url, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: payload
+                });
+
+                const result = await response.json();
+                document.getElementById("response").innerText = "Success: " + JSON.stringify(result);
+            } catch (error) {
+                document.getElementById("response").innerText = "Error: " + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

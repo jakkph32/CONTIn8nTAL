@@ -1,5 +1,4 @@
 {
-  "name": "CONTIn8nTAL",
   "displayName": "CONTIn8nTAL",
   "description": "Contin8ntal is a Visual Studio Code extension designed to seamlessly integrate \\\"Continue\\\" with \\\"n8n,\\\" enhancing your workflow by enabling smooth communication and automation between the two platforms. Perfect for developers looking to streamline their tasks, Contin8ntal ensures easy connection and synchronization for efficient project management.",
   "version": "0.0.1",
@@ -14,8 +13,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "CONTIn8nTAL.helloWorld",
-        "title": "Hello World"
+        "command": "contin8ntal.openPanel",
+        "title": "Contin8ntal: Open n8n Trigger UI"
       }
     ]
   },
@@ -28,14 +27,18 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.98.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
-    "eslint": "^9.23.0",
-    "typescript": "^5.8.2",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1",
+    "node-fetch": "^3.3.2"
   }
 }
